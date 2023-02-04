@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 2</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      body {
+        background-color: #efefef;
+        margin: 0px;
+      }
+      header {
+        padding: 16px 78px;
+        background-color: #fff;
+        box-shadow: 0 1px 1px #ccc;
+      }
+      #logo {
+        font-size: 32px;
+        font-weight: 900;
+        color: #0084ff;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        cursor: pointer;
+      }
+      #logo-stories {
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        font-style: italic;
+      }
+      #dropdown {
+        padding-top: 0px;
+        padding-left: 8px;
+      }
+      #dropdown-text {
+        color: #000;
+        cursor: pointer;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        margin-left: 100px;
+      }
+      #heading {
+        color: #000;
+        font-weight: 600;
+        margin-bottom: 0px;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        margin-left: 120px;
+      }
+      #filter {
+        color: #0084ff;
+        font-size: 20px;
+      }
+      #filter-content {
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        margin-left: 8px;
+      }
+      .Categories {
+        padding: 6px 14px;
+        color: #0084ff;
+        list-style-type: none;
+        border: 1px solid #0084ff;
+        margin: 5px;
+        border-radius: 15px;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        float: left;
+        cursor: pointer;
+      }
+      .Categories:hover {
+        color: #fff;
+        background-color: #0084ff;
+      }
+      #link-category {
+        height: 100px;
+        margin-left: 60px;
+        padding: 10px;
+      }
+      #filter-padding {
+        padding-top: 16px;
+        margin-left: 120px;
+      }
+      .image {
+        width: 100%;
+        height: 100%;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+      }
+      .item {
+        width: 30%;
+        background-color: #fff;
+        cursor: pointer;
+        float: left;
+        margin-right: 10px;
+        margin-bottom: 20px;
+      }
+      .img-sec {
+        height: 100%;
+        width: 100%;
+      }
+      .text-sec {
+        padding: 10px 24px;
+      }
+      .title {
+        font-size: 18px;
+        text-align: left;
+        margin: 0px;
+        font-weight: 600;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+      }
+      .author {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+      }
+      .edyoda {
+        color: #0096ff;
+        font-size: 14px;
+        font-style: italic;
+        font-weight: 500;
+      }
+      .date {
+        color: rgba(0, 0, 0, 0.7);
+        font-size: 14px;
+        font-weight: 300;
+      }
+      .text {
+        font-size: 14px;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        line-height: 1.43;
+        font-weight: 400;
+        color: rgba(0, 0, 0, 0.6);
+        margin: 4px;
+      }
+      footer {
+        background-color: #172146;
+        padding: 80px 16%;
+        clear: both;
+        height: 300px;
+      }
+      main {
+        box-sizing: border-box;
+        margin-left: 120px;
+      }
+      .footer-left {
+        float: left;
+        color: #ccc;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+      }
+      .list-type {
+        list-style-type: none;
+        margin-left: 30px;
+        font-size: 14px;
+        margin-top: 30px;
+      }
+      .head-line {
+        font-size: 20px;
+        color: rgb(163, 162, 162);
+        margin-bottom: 15px;
+        cursor: default;
+      }
+      footer span ul li {
+        margin-bottom: 8px;
+        cursor: pointer;
+      }
+    
+    </style>
+  </head>
+  <body>
+    <header>
+      <div>
+        <div>
+          <span id="logo">EDYODA</span
+          ><span id="dropdown-text">
+            Explore Categories<span id="dropdown">&#118;</span>
+          </span>
+        </div>
+        <div id="logo-stories">Stories</div>
+      </div>
+    </header>
+    <h1 id="heading">Trending Posts</h1>
+    <div id="filter-padding">
+      <div class="fa fa-filter" id="filter"></div>
+      <span id="filter-content"> Filter by Category</span>
+    </div>
+    <nav id="link-category">
+      <ul>
+        <li class="Categories">All</li>
+        <li class="Categories">Artificial Intelligence</li>
+        <li class="Categories">Cloud Computing</li>
+        <li class="Categories">Devops</li>
+        <li class="Categories">Programming Languages</li>
+        <li class="Categories">Mobile Application Development</li>
+        <li class="Categories">Technology and Tools</li>
+        <li class="Categories">Get a Job in a Tech Company</li>
+        <li class="Categories">Others</li>
+      </ul>
+    </nav>
+    <main>
+      <section>
+        <div class="item">
+          <div class="img-sec">
+            <img
+              class="image"
+              src="https://edyoda.s3.amazonaws.com/media/blog-images/3.png"
+              alt="big-data"
+            />
+          </div>
+          <div class="text-sec">
+            <div class="title">
+              Challenges of Machine Learning in Big Data...
+            </div>
+            <div class="author">
+              <span class="edyoda"> EdYoda</span>
+              <span class="date">| 24 Aug 2019</span>
+            </div>
+            <div class="text">
+              Machine Learning is a subset of artificial intelligence which is
+              an important part of computer science. The revolution of Big Data
+              promises to transform the way we...
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="img-sec">
+            <img
+              class="image"
+              src="https://edyoda.s3.amazonaws.com/media/blog-images/4.png"
+              alt="cloud-computing"
+            />
+          </div>
+          <div class="text-sec">
+            <div class="title">Impact of Cloud Computing in various...</div>
+            <div class="author">
+              <span class="edyoda"> EdYoda</span>
+              <span class="date">| 24 Aug 2019</span>
+            </div>
+            <div class="text">
+              Cloud computing has been rapidly gaining pace in the world of
+              information technology. It has been observed that over 90% of
+              global enterprises are using cloud...
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="img-sec">
+            <img
+              class="image"
+              src="https://edyoda.s3.amazonaws.com/media/blog-images/5.png"
+              alt="cybersecurity"
+            />
+          </div>
+          <div class="text-sec">
+            <div class="title">Breaking the Myths around Cybersecurity</div>
+            <div class="author">
+              <span class="edyoda"> EdYoda</span>
+              <span class="date">| 26 Aug 2019</span>
+            </div>
+            <div class="text">
+              Cybersecurity plays an integral role in the process of good
+              business models. But even cybersecurity programs built with good
+              intentions can fall short in front of...
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="item">
+          <div class="img-sec">
+            <img
+              class="image"
+              src="https://edyoda.s3.amazonaws.com/media/blog-images/6.png"
+              alt="mean-stack"
+            />
+          </div>
+          <div class="text-sec">
+            <div class="title">
+              LAMP Stack Vs MEAN stack: Choosing the righ...
+            </div>
+            <div class="author">
+              <span class="edyoda"> EdYoda</span>
+              <span class="date">| 24 Aug 2019</span>
+            </div>
+            <div class="text">
+              In today’s dynamic world, rapid web application development with a
+              smooth user interface that can adapt to specific features is the
+              main business requirement. Many...
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="img-sec">
+            <img
+              class="image"
+              src="https://edyoda.s3.amazonaws.com/media/blog-images/learn_machine_learning_courses_online.png"
+              alt="machine-learning"
+            />
+          </div>
+          <div class="text-sec">
+            <div class="title">Introduction To A Machine Learning Onlin...</div>
+            <div class="author">
+              <span class="edyoda"> EdYoda</span>
+              <span class="date">| 23 Aug 2019</span>
+            </div>
+            <div class="text">
+              We have had an insight into Artificial Intelligence. Well, one of
+              its subfields is machine learning and this introduction will help
+              you get a fair idea of what a machin...
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="img-sec">
+            <img
+              class="image"
+              src="https://edyoda.s3.amazonaws.com/media/blog-images/practical_machine_learning_1.png"
+              alt="machine-learning"
+            />
+          </div>
+          <div class="text-sec">
+            <div class="title">Practical Machine Learning with Python...</div>
+            <div class="author">
+              <span class="edyoda"> Daniel Pyrathon</span>
+              <span class="date">| 16 Oct 2019</span>
+            </div>
+            <div class="text">
+              Machine learning is a field of artificial intelligence that uses
+              statistical techniques to give computer systems the ability to
+              “learn” (e.g., progressively improv...
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <span class="footer-left">
+        <ul class="list-type">
+          <li class="head-line">EDYODA</li>
+          <li>About Us</li>
+          <li>Careers</li>
+          <li>Contact Us</li>
+          <li>Terms of Use</li>
+          <li>Privacy Policy</li>
+        </ul>
+      </span>
+      <span class="footer-left">
+        <ul class="list-type">
+          <li class="head-line">RESOURCES</li>
+          <li>Learning Paths</li>
+          <li>Courses</li>
+          <li>Learning Videos</li>
+          <li>Educators</li>
+          <li>EdYoda Stories</li>
+          <li>University</li>
+        </ul>
+      </span>
+      <span class="footer-left">
+        <ul class="list-type">
+          <li class="head-line">FOR ENTERPRISES</li>
+          <li>Train Your Employees</li>
+        </ul>
+        <ul class="list-type">
+          <li class="head-line" >QUICK LINKS</li>
+          <li>Learn and Earn</li>
+          <li>Become a Learning-Enabler</li>
+          <li>Tips for Learning-Enabler</li>
+          <li>Request New Topic</li>
+          <li>Certification</li>
+          <li>Affiliate Progam</li>
+        </ul>
+      </span>
+      <span class="footer-left">
+        <ul class="list-type">
+          <li class="head-line">CONNECT</li>
+          <li>2nd Floor #188, Survey No. - 123/1,<br>
+            Incubes Building Next to McDonalds,<br>
+            ITPL Main Rd, Brookefield,
+            Bengaluru,<br> brKarnataka-560037,
+            India</li>
+            <li>hello@edyoda.com</li>
+            <li>&#169;2022</li>
+            <li>zekeLabs Technologies Private Limited</li>
+        </ul>
+      </span>
+    </footer>
+  </body>
+</html>
